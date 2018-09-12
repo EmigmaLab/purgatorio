@@ -9,11 +9,6 @@ See [changelog](CHANGELOG.md)
 
 ## Features
 
-### Shortcodes
-
-- Google maps shortcode `[pg_gmaps id=gmaps-container cpt=page height=400px]`
-- Attachments shortcode `[pg_attachments post_id=123 title=Downloads]`
-
 ### Widgets & Sidebars
 - `/includes/widgets/widgets.php`
 
@@ -106,12 +101,18 @@ See [changelog](CHANGELOG.md)
 ### Google Maps
 - `/gmaps/class-gmaps.php`
 - `global $pg_gmaps`
+- Google maps shortcode `[pg_gmaps id=gmaps-container cpt=page height=400px]`
 
   - Get post geolocation - By coordinated or by address
   - Get coordinates from address - Google API request
   - Create array of locations with valid geo data
   - Populate map with array of location - markers
   - Marker clustering
+  
+### Attachments
+- `/gmaps/class-attachments.php`
+- `global $pg_attachments`
+- Attachments shortcode `[pg_attachments post_id=123 title=Downloads]`
 
 ## Installation
 Upload the files manually to your server and follow the on-screen instructions.
