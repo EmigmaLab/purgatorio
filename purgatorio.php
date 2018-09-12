@@ -3,7 +3,7 @@
 /*******************************************************
 *
 *	Plugin Name: 	Purgatorio
-*   Author: 		Alen Redek
+*   Author: 		Alen Branko Redek
 *   Author URI: 	https://www.redek.me/
 *   Description: 	Various helper functions and classes for faster theme development
 *   Version: 		1.0
@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Copyright 2016 Alen Redek
+Copyright 2016 Alen Branko Redek
 */
 
 define( 'PURGATORIO_VERSION', '1.0' );
@@ -68,8 +68,6 @@ if ( is_admin() ) {
 	Purgatorio_Admin::init();
 }
 
-register_activation_hook( __FILE__, array( 'Purgatorio', 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( 'Purgatorio', 'plugin_deactivation' ) );
 add_action( 'init', array( 'Purgatorio', 'init' ) );
 add_action( 'plugins_loaded', array( 'Purgatorio', 'plugin_textdomain' ), 99 );
 
