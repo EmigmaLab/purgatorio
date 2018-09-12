@@ -1,4 +1,4 @@
-# Purgatorio WordPress plugin for faster theme development
+# Purgatorio Dev Plugin
 
 ## About
 
@@ -50,7 +50,7 @@ See [changelog](CHANGELOG.md)
   - Resizing all image media files on upload to 1920
   - Custom Page Columns - Display page template PHP file location
 
-### Functions
+### Helper Functions
 - `/includes/global-functions.php`
 
   - Get plugin option value
@@ -113,6 +113,33 @@ See [changelog](CHANGELOG.md)
 - `/gmaps/class-attachments.php`
 - `global $pg_attachments`
 - Attachments shortcode `[pg_attachments post_id=123 title=Downloads]`
+
+### JavaScript
+- `/assets/js/purgatorio.js`
+- Usage:
+  - Initialize in your theme js: `var pg = $.cantica.purgatorio();`
+  - Call desired methods `pg.functionName();`
+
+- Options property
+  - screenLg
+  - screenMd
+  - screenSm
+  - viewportW
+  - windowW
+  
+- Public methods
+  - Toggle body class, when specific button is pressed
+  - Toggle closest element class, when specific button is pressed
+  - Redirect to URL on dropdown select
+  - Close other accordions once one has been opened
+  - Initialize Ekko lightbox
+  - Smooth scroll to anchor target
+  - Scroll back to top when button is clicked
+  - Set all elements to same height within same class name
+  - Desktop navbar dropdown smooth effect
+  - Add Bootstrap table classes & Responsive table with table-responsive wrapper
+  - Responsive transform tables on smaller devices - Header row becomes one column, other column represents data
+  - Clear an input field with an 'X'
 
 ## Installation
 Upload the files manually to your server and follow the on-screen instructions.
