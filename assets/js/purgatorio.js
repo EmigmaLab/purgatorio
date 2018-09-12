@@ -91,23 +91,6 @@ jQuery.noConflict();
                 return false;
             });
         },
-
-        /**
-		 * Bootstrap table styling
-		 *
-		 * @access public
-		 * @param string
-		 * @return
-		 *
-		**/
-        bootstrapTables: function(tableSelector) {
-            $(tableSelector).each(function(i, table){
-                var $table = $(table);
-                if($table.length){
-                    $table.addClass('table table-striped table-hover').wrap('<div class="table-responsive" />');
-                }
-            });
-        },
         
         /**
 		 * Close other accordions once one has been opened
@@ -256,10 +239,27 @@ jQuery.noConflict();
 	                    $(this).css({'margin-top':'', display:''});
 	                });
 	        });
+		},
+		
+		/**
+		 * Add Bootstrap table classes & Responsive table with table-responsive wrapper
+		 *
+		 * @access public
+		 * @param string
+		 * @return
+		 *
+		**/
+        bootstrapTables: function(tableSelector) {
+            $(tableSelector).each(function(i, table){
+                var $table = $(table);
+                if($table.length){
+                    $table.addClass('table table-striped table-hover').wrap('<div class="table-responsive" />');
+                }
+            });
         },
         
         /**
-		 * Responsive tranform tables on smaller devices - Header row becomes one column, other column represents data
+		 * Responsive transform tables on smaller devices - Header row becomes one column, other column represents data
 		 *
 		 * @access public
 		 * @param string

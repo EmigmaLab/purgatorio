@@ -63,30 +63,6 @@ class Purgatorio_Admin {
 			$option_group
 		);
 		
-/*
-		$field_key = 'dev_ip';
-		add_settings_field(
-			$field_key,
-			__( 'Development IP address', 'purgatorio' ),
-			array($this, 'render_input_text_field'),
-			$option_group,
-			$section_id,
-			array('field_key' => $field_key)
-		);
-*/
-		
-/*
-		$field_key = 'enable_livereload';
-		add_settings_field(
-			$field_key,
-			__( 'Enable LiveReload', 'purgatorio' ),
-			array($this, 'render_input_checkbox_field'),
-			$option_group,
-			$section_id,
-			array('field_key' => $field_key)
-		);
-*/
-		
 		$field_key = 'wp_docs_url';
 		add_settings_field(
 			$field_key,
