@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get current language using Polylang
+ * Get current language using Polylang or WPML
  *
  * @param
  * @return string
@@ -9,9 +9,13 @@
 **/
 if ( ! function_exists('pg_get_current_language') ) {
     function pg_get_current_language() {
-	    $current_lang = 'en';
-        if(function_exists('pll_current_language')){
+        $current_lang = 'en';
+        
+        if( function_exists('pll_current_language') ){
             $current_lang = pll_current_language();
+        }
+        elseif( defined('ICL_LANGUAGE_CODE') ){
+            $current_lang = ICL_LANGUAGE_CODE;
         }
         
         return $current_lang;
@@ -27,7 +31,7 @@ if ( ! function_exists('pg_get_current_language') ) {
 **/
 if ( ! function_exists('pg_get_translated_post') ) {
     function pg_get_translated_post($post_id) {
-        if(function_exists('pll_current_language') && function_exists('pll_get_post')){
+        if( function_exists('pll_current_language') && function_exists('pll_get_post') ){
             $post_id = pll_get_post($post_id, pll_current_language());
         }
         
@@ -44,7 +48,7 @@ if ( ! function_exists('pg_get_translated_post') ) {
 **/
 if ( ! function_exists('pg_get_translated_term') ) {
     function pg_get_translated_term($term_id) {
-        if(function_exists('pll_current_language') && function_exists('pll_get_term')){
+        if( function_exists('pll_current_language') && function_exists('pll_get_term') ){
             $term_id = pll_get_term($term_id, pll_current_language());
         }
         
