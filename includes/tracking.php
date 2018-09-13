@@ -1,54 +1,36 @@
 <?php
 
-if( ! function_exists('google_analytics_tracking') ){
-	add_action('wp_head','google_analytics_tracking');
-	function google_analytics_tracking(){
-		$ga_tracking_id = pg_get_option('ga_tracking_id');
-		if( ! $ga_tracking_id ){
+if( ! function_exists('pg_google_tag_manager_head_tracking') ){
+	add_action('wp_head','pg_google_tag_manager_head_tracking');
+	function pg_google_tag_manager_head_tracking(){
+		$gtm_id = pg_get_option('google_tag_manager_id');
+		if( ! $gtm_id ){
 			return;
 		}
 		?>
-		<!-- Google Analytics tracking Code -->
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-		
-		ga('create', '<?php echo $ga_tracking_id; ?>', 'auto');
-		ga('send', 'pageview');
-		</script>
-		<!-- End Google Analytics tracking Code -->
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','<?php echo $gtm_id; ?>');</script>
+		<!-- End Google Tag Manager -->
 		<?php
 	}
 }
 
-if( ! function_exists('facebook_pixel_tracking') ){
-	add_action('wp_head','facebook_pixel_tracking');
-	function facebook_pixel_tracking(){
-		$fb_tracking_id = pg_get_option('fb_tracking_id');
-		if( ! $fb_tracking_id ){
+if( ! function_exists('pg_google_tag_manager_body_tracking') ){
+	add_action('after_body_open_tag','pg_google_tag_manager_body_tracking');
+	function pg_google_tag_manager_body_tracking(){
+		$gtm_id = pg_get_option('google_tag_manager_id');
+		if( ! $gtm_id ){
 			return;
 		}
 		?>
-		<!-- Facebook Pixel Code -->
-		<script>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window,document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '<?php echo $fb_tracking_id; ?>'); 
-			fbq('track', 'PageView');
-			fbq('track', 'ViewContent');
-		</script>
-		<noscript>
-			<img height="1" width="1" src="https://www.facebook.com/tr?id=<?php echo $fb_tracking_id; ?>&ev=PageView&noscript=1"/>
-		</noscript>
-		<!-- End Facebook Pixel Code -->
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<?php
 	}
 }

@@ -50,6 +50,12 @@ See [changelog](CHANGELOG.md)
   - Resizing all image media files on upload to 1920
   - Custom Page Columns - Display page template PHP file location
 
+- `includes/tracking.php`
+
+  - Add Google Tag Manager code before closing `<head>` tag
+  - Add Google Tag Manager code right after `<body>` tag
+    - In order to work, tou have to add this snippet to your theme's header.php file: `<?php do_action('after_body_open_tag'); ?>`
+
 ### Helper Functions
 - `/includes/global-functions.php`
 

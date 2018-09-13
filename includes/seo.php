@@ -52,7 +52,6 @@ if ( ! function_exists('pg_required_hentry_schema') ) {
 					<?php printf(__('%s at %s', 'purgatorio'), get_the_modified_date(), get_the_modified_time()); ?>
 				</time>
               </span>
-              
           </span>
         <?php
     }

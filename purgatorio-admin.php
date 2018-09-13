@@ -103,16 +103,6 @@ class Purgatorio_Admin {
 			array('field_key' => $field_key)
 		);
 		
-		$field_key = 'fb_tracking_id';
-		add_settings_field(
-			$field_key,
-			__( 'Facebook Pixel tracking ID', 'purgatorio' ),
-			array($this, 'render_input_text_field'),
-			$option_group,
-			$section_id,
-			array('field_key' => $field_key)
-		);
-		
 		$section_id = 'purgatorio_3rdparty_section';
 		add_settings_section(
 			$section_id,
@@ -179,10 +169,10 @@ class Purgatorio_Admin {
 			$option_group
 		);
 		
-		$field_key = 'ga_tracking_id';
+		$field_key = 'google_tag_manager_id';
 		add_settings_field(
 			$field_key,
-			__( 'GA tracking ID', 'purgatorio' ),
+			__( 'Google Tag Manager ID', 'purgatorio' ),
 			array($this, 'render_input_text_field'),
 			$option_group,
 			$section_id,
