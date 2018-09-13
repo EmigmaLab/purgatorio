@@ -1,7 +1,7 @@
 <?php
 
-if( ! function_exists('pg_buisness_card_func') ){
-	function pg_buisness_card_func( $atts ) {
+if( ! function_exists('pg_organization_render_html') ){
+	function pg_organization_render_html( $atts ) {
 		if( ! function_exists('get_field') ){
 			return;
 		}

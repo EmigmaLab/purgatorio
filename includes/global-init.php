@@ -102,6 +102,13 @@ if ( ! function_exists( 'pg_after_setup_theme' ) ) {
 
 /*
 ******************************************************************************************************
+    Allow shortcodes to be executed in a custom HTML widget
+******************************************************************************************************
+*/
+add_filter( 'widget_text', 'do_shortcode' );
+
+/*
+******************************************************************************************************
     Modify admin menu
 ******************************************************************************************************
 */
@@ -114,6 +121,21 @@ if ( ! function_exists('pg_admin_menu') ) {
 			remove_menu_page( 'aam' );
         }
     }
+}
+
+/*
+******************************************************************************************************
+    ACF Theme options page
+******************************************************************************************************
+*/
+if(function_exists('acf_add_options_page')){
+    acf_add_options_page(array(
+        'page_title'    => __('Theme options', 'purgatorio'),
+        'menu_title'    => __('Theme options', 'purgatorio'),
+        'menu_slug'     => 'theme-options',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
 }
 
 /*

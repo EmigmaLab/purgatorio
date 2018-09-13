@@ -23,6 +23,28 @@ if ( ! function_exists('pg_get_current_language') ) {
 }
 
 /**
+ * Get all languages using Polylang or WPML
+ *
+ * @param
+ * @return string
+ *
+**/
+if ( ! function_exists('pg_get_all_languages') ) {
+    function pg_get_all_languages() {
+        $current_lang = 'en';
+        
+        if( function_exists('pll_current_language') ){
+            $current_lang = pll_current_language();
+        }
+        elseif( has_filter('wpml_current_language') ){
+            $current_lang = apply_filters( 'wpml_current_language', NULL );
+        }
+        
+        return $current_lang;
+    }
+}
+
+/**
  * Get translated post using Polylang or WPML
  *
  * @param integer

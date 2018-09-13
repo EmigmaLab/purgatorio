@@ -12,19 +12,16 @@ See [changelog](CHANGELOG.md)
 ### Widgets & Sidebars
 - `/includes/widgets/widgets.php`
 
-  - Sidebar Hero Static
-  - Sidebar Homepage Widgets (1/2)
   - Sidebar Header Right
   - Sidebar Footer Top Widget
   - Sidebar Footer Widgets (1/4)
   - Sidebar Footer Bottom Widget
-  - Widget Business card
-  - Widget Dynamic banner (for each post)
-  - Widget Featured item banner
   - Widget Language switcher
-  - Widget Login form
-  - Widget Side navigation
-  - Widget Top banner item
+
+### Shortcodes
+- `/shortcodes/shortcodes.php`
+
+  - Organization Business card shortcode `[pg_organization]` (Tip: You can use Custom HTML widget)
 
 ### Hooks
 - `/includes/security.php`
@@ -43,6 +40,7 @@ See [changelog](CHANGELOG.md)
   - Custom font sizes on WYSIWYG
   - Modify admin menu - remove some items
   - Remove Rev Slider Metabox
+  - Add ACF Theme options page
   - Adds custom classes to body - environment, language
   - Disable premium plugins update notification - Rev slider, Visual composer
   - Add additional data to Yoast's SEO JSON-LD output - Author & Publisher ID for website
@@ -150,6 +148,10 @@ See [changelog](CHANGELOG.md)
   - Add Bootstrap table classes & Responsive table with table-responsive wrapper
   - Responsive transform tables on smaller devices - Header row becomes one column, other column represents data
   - Clear an input field with an 'X'
+
+### ACF imports
+- `/imports/acf-attachments.json`
+- `/imports/acf-theme-options.json`
 
 ## Installation
 Upload the files manually to your server and follow the on-screen instructions.

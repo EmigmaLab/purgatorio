@@ -9,26 +9,6 @@ if ( ! function_exists( 'pg_widgets_init' ) ) {
     add_action( 'widgets_init', 'pg_widgets_init' );
     function pg_widgets_init() {
 
-        register_sidebar(array(
-            'id'            => 'home-widget-1',
-            'name'          => __( 'Homepage Widget 1', 'purgatorio' ),
-            'description'   => __( 'Displays on the Home Page', 'purgatorio' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widgettitle">',
-            'after_title'   => '</h3>',
-        ));
-
-        register_sidebar(array(
-            'id'            => 'home-widget-2',
-            'name'          => __( 'Homepage Widget 2', 'purgatorio' ),
-            'description'   => __( 'Displays on the Home Page', 'purgatorio' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widgettitle">',
-            'after_title'   => '</h3>',
-        ));
-
         register_sidebar( array(
             'name'          => __( 'Header Right', 'purgatorio' ),
             'id'            => 'headerright',
@@ -99,22 +79,6 @@ if ( ! function_exists( 'pg_widgets_init' ) ) {
             'after_title'   => '</h2>',
         ));
         
-        if(file_exists(PURGATORIO__PLUGIN_DIR.'widgets/widget-banner.php')){
-			require_once(PURGATORIO__PLUGIN_DIR.'widgets/widget-banner.php');
-			register_widget( 'pg_banner_widget' );
-		}
-        if(file_exists(PURGATORIO__PLUGIN_DIR.'widgets/widget-business-card.php')){
-			require_once(PURGATORIO__PLUGIN_DIR.'widgets/widget-business-card.php');
-			register_widget( 'pg_business_card_widget' );
-		}
-		if(file_exists(PURGATORIO__PLUGIN_DIR.'widgets/widget-dynamic-banner.php')){
-			require_once(PURGATORIO__PLUGIN_DIR.'widgets/widget-dynamic-banner.php');
-			register_widget( 'pg_dynamic_banner_widget' );
-		}
-		if(file_exists(PURGATORIO__PLUGIN_DIR.'widgets/widget-featured-banner.php')){
-			require_once(PURGATORIO__PLUGIN_DIR.'widgets/widget-featured-banner.php');
-			register_widget( 'pg_featured_banner_widget' );
-		}
 		if(file_exists(PURGATORIO__PLUGIN_DIR.'widgets/widget-language-switcher.php')){
 			require_once(PURGATORIO__PLUGIN_DIR.'widgets/widget-language-switcher.php');
 			register_widget( 'pg_language_switcher_widget' );
