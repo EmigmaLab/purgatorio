@@ -56,9 +56,7 @@ See [changelog](CHANGELOG.md)
   - Get plugin option value
   - Get theme option value
   - Determine environment - dev / prod
-  - Local var_dump - output visible only on dev IP & to administrators
-  - Get translated post using Polylang
-  - Get translated term using Polylang
+  - Local var_dump - output visible only to administrators
   - Get post type years archive
   - Group posts by month
   - Get page template for pre-selected CPT
@@ -74,7 +72,13 @@ See [changelog](CHANGELOG.md)
   - Get taxonomy title
   - Get file size
   - Get file ID by URL
-  - Check if file exists in upload folder
+  - Check if file exists in uploads folder
+
+- `/includes/i18n.php`
+
+  - Get current language using Polylang or WPML
+  - Get translated post using Polylang or WPML
+  - Get translated term using Polylang or WPML
 
 - `/includes/seo.php`
 
@@ -120,7 +124,7 @@ See [changelog](CHANGELOG.md)
   - Initialize in your theme js: `var pg = $.cantica.purgatorio();`
   - Call desired methods `pg.functionName();`
 
-- Options property
+- Options properties
   - screenLg
   - screenMd
   - screenSm
@@ -153,3 +157,4 @@ Licenses & Credits
 - WP_Query Arguments Code Snippets https://www.billerickson.net/code/wp_query-arguments/
 - WP Theme Customization https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
 - Polylang Function Reference https://polylang.wordpress.com/documentation/documentation-for-developers/functions-reference/
+- WPML Hooks Reference https://wpml.org/documentation/support/wpml-coding-api/wpml-hooks-reference/
