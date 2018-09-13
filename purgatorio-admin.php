@@ -208,6 +208,16 @@ class Purgatorio_Admin {
 			$section_id,
 			array('field_key' => $field_key)
 		);
+
+		$field_key = 'gmaps_acf_metakey';
+		add_settings_field(
+			$field_key,
+			__( 'Google Maps ACF metakey', 'purgatorio' ),
+			array($this, 'render_input_text_field'),
+			$option_group,
+			$section_id,
+			array('field_key' => $field_key)
+		);
 		
 		$field_key = 'gmaps_address_metakey';
 		add_settings_field(

@@ -36,19 +36,24 @@ class PG_GMaps_Class {
         wp_enqueue_script('purgatorio-gmaps-theme', PURGATORIO__PLUGIN_URL.$this->gmaps_dir.'/js/gmaps-clustered.js', array('jquery', 'purgatorio-gmaps-api', 'purgatorio-gmaps-markerclusterer'), PURGATORIO_VERSION);
 	}
 	
-	protected function get_post_geolocation($post_meta){
-		$geolocation = false;
-		
-		if( isset($post_meta[$this->pg_options['gmaps_lat_metakey']]) && isset($post_meta[$this->pg_options['gmaps_lng_metakey']])){
+	protected function get_post_geolocation($post_id){
+        $geolocation = false;
+        $post_meta = get_post_meta($post_id);
+        
+        if( isset($post_meta[$this->pg_options['gmaps_acf_metakey']]) ){
+            $geolocation = get_field($this->pg_options['gmaps_acf_metakey'], $post_id);
+        }
+		elseif( isset($post_meta[$this->pg_options['gmaps_lat_metakey']]) && isset($post_meta[$this->pg_options['gmaps_lng_metakey']])){
 			$geolocation = array(
 	            'lat' => $post_meta[$this->pg_options['gmaps_lat_metakey']][0],
 	            'lng' => $post_meta[$this->pg_options['gmaps_lng_metakey']][0],
 	        );
-		}elseif( isset($post_meta[$this->pg_options['gmaps_address_metakey']]) ){
+        }
+        elseif( isset($post_meta[$this->pg_options['gmaps_address_metakey']]) ){
 			$address = $post_meta[$this->pg_options['gmaps_address_metakey']][0];
 			$geolocation = $this->get_coordinates($address);
-		}
-            
+        }
+        
         return $geolocation;
 	}
 
@@ -97,8 +102,7 @@ class PG_GMaps_Class {
         $locations = array();
         $i=0;
         foreach($posts as $post){
-	        $post_meta = get_post_meta($post->ID);
-	        $geolocation = $this->get_post_geolocation($post_meta);
+	        $geolocation = $this->get_post_geolocation($post->ID);
             if($geolocation['lat'] && $geolocation['lng']){
 	            $post_meta_html = '';
 	                ob_start();

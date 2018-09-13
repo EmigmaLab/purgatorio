@@ -46,7 +46,6 @@ require_once(PURGATORIO__PLUGIN_DIR.'includes/security.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/tracking.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/seo.php');
 require_once(PURGATORIO__PLUGIN_DIR.'shortcodes/shortcodes.php');
-require_once(PURGATORIO__PLUGIN_DIR.'widgets/widgets.php');
 
 /* Query class */
 require_once(PURGATORIO__PLUGIN_DIR.'includes/class-queries.php');

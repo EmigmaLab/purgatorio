@@ -31,16 +31,15 @@ if ( ! function_exists('pg_get_current_language') ) {
 **/
 if ( ! function_exists('pg_get_all_languages') ) {
     function pg_get_all_languages() {
-        $current_lang = 'en';
-        
-        if( function_exists('pll_current_language') ){
-            $current_lang = pll_current_language();
+        $all_languages = array();
+        if( function_exists('pll_the_languages') ){
+            $all_languages = pll_the_languages(array('raw'=>1));
         }
-        elseif( has_filter('wpml_current_language') ){
-            $current_lang = apply_filters( 'wpml_current_language', NULL );
+        elseif( has_filter('wpml_active_languages') ){
+            $all_languages = apply_filters( 'wpml_active_languages', NULL );
         }
         
-        return $current_lang;
+        return $all_languages;
     }
 }
 

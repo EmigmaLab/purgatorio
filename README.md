@@ -9,24 +9,10 @@ See [changelog](CHANGELOG.md)
 
 ## Features
 
-### Widgets & Sidebars
-- `/includes/widgets/widgets.php`
-
-  - Sidebar Header Right
-  - Sidebar Footer Top Widget
-  - Sidebar Footer Widgets (1/4)
-  - Sidebar Footer Bottom Widget
-  - Widget Language switcher
-
-### Shortcodes
-- `/shortcodes/shortcodes.php`
-
-  - Organization Business card shortcode `[pg_organization]` (Tip: You can use Custom HTML widget)
-
 ### Hooks
 - `/includes/security.php`
 
-  - Clean up wp_head() from unused or unsecure stuff
+  - Clean up wp_head() from unused or insecure stuff
   - Removes the generator tag with WP version numbers
   - Show less info to users on failed login for security (Will not let a valid username be known)
 
@@ -46,13 +32,13 @@ See [changelog](CHANGELOG.md)
   - Add additional data to Yoast's SEO JSON-LD output - Author & Publisher ID for website
   - Yoast SEO breadcrumbs modifications for single pages
   - Resizing all image media files on upload to 1920
-  - Custom Page Columns - Display page template PHP file location
 
 - `includes/tracking.php`
 
   - Add Google Tag Manager code before closing `<head>` tag
   - Add Google Tag Manager code right after `<body>` tag
-    - In order to work, tou have to add this snippet to your theme's header.php file: `<?php do_action('after_body_open_tag'); ?>`
+    - In order to work, you have to add this snippet to your theme's header.php file
+    `<?php do_action('after_body_open_tag'); ?>`
 
 ### Helper Functions
 - `/includes/global-functions.php`
@@ -81,6 +67,7 @@ See [changelog](CHANGELOG.md)
 - `/includes/i18n.php`
 
   - Get current language using Polylang or WPML
+  - Get all languages using Polylang or WPML
   - Get translated post using Polylang or WPML
   - Get translated term using Polylang or WPML
 
@@ -105,6 +92,12 @@ See [changelog](CHANGELOG.md)
   - Get date based post
   - Get taxonomy term's posts
   - Get posts sorted by term
+
+### Shortcodes
+- `/shortcodes/shortcodes.php`
+
+  - Organization Business card shortcode `[pg_business_card]`
+    - Tip: You can use Custom HTML widget
 
 ### Google Maps
 - `/gmaps/class-gmaps.php`

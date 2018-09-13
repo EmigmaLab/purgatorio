@@ -223,4 +223,17 @@ if ( ! function_exists('pg_handle_upload') ) {
     }
 }
 
+/*
+******************************************************************************************************
+    ACF init settings
+******************************************************************************************************
+*/
+if ( ! function_exists( 'pg_acf_settings' ) ) {
+	add_action('acf/init', 'pg_acf_settings');
+	function pg_acf_settings() {
+        $gmaps_api_key = pg_get_option('gmaps_api_key');
+		acf_update_setting('google_api_key', $gmaps_api_key);
+	}
+}
+
 ?>

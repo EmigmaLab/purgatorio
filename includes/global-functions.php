@@ -64,7 +64,7 @@ if ( ! function_exists('pg_is_dev') ) {
 if ( ! function_exists('lvar_dump') ) {
     function lvar_dump(){
         $args = func_get_args();
-        if(pg_is_dev()){
+        if( pg_is_dev() ){
             echo '<pre>';
                 var_dump($args);
             echo '</pre>';
