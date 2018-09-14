@@ -41,7 +41,7 @@ define( 'PURGATORIO__SETTINGS', 'purgatorio_settings' );
 require_once(PURGATORIO__PLUGIN_DIR.'purgatorio-class.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/global-functions.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/global-init.php');
-require_once(PURGATORIO__PLUGIN_DIR.'includes/i18n.php');
+require_once(PURGATORIO__PLUGIN_DIR.'includes/interface-localization.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/security.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/tracking.php');
 require_once(PURGATORIO__PLUGIN_DIR.'includes/seo.php');
