@@ -145,6 +145,7 @@ See [changelog](CHANGELOG.md)
 ### ACF imports
 - `/imports/acf-attachments.json`
 - `/imports/acf-theme-options.json`
+- `/imports/acf-geolocation.json`
 
 ## Installation
 Upload the files manually to your server and follow the on-screen instructions.
